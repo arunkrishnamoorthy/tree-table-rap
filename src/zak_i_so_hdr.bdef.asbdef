@@ -1,0 +1,23 @@
+managed implementation in class zbp_ak_i_so_hdr unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZAK_I_SO_HDR //alias <alias_name>
+persistent table zak_poc_so_hdr
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+}
+
+define behavior for ZAK_I_SO_ITM
+persistent table zak_poc_so_item
+lock dependent
+{
+
+ field ( readonly ) Vbeln,Posnr;
+ update;
+ delete;
+}

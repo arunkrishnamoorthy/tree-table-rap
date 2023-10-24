@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition'
+define service ZAK_POC_SO_SD {
+  expose ZAK_I_SO_HDR;
+  expose ZAK_I_SO_ITM;
+}
